@@ -54,120 +54,66 @@ const App = () => {
 
   return (
     <>
-      <animated.div
-        className="absolute inset-10 flex justify-center  space-x-8"
-        style={headingProps}
-      >
-        {trail.map((animation, index) => (
-          <animated.div key={index} style={animation} className="navbar-line ">
-            {lines[index]}
-          </animated.div>
-        ))}
-      </animated.div>
-      <div className="block inset-0  items-center justify-center">
-        <animated.h1
-          id="MyElement"
-          className="font-thin center-heading text-black text-6xl font-serif"
+      <div className="gradient">
+        {/* <h1>dfds</h1> */}
+        <animated.div
+          className="absolute inset-10 flex justify-center  space-x-8"
           style={headingProps}
         >
-          <Image
-            src={Logo}
-            alt="Sahara Desert landscape"
-            loading="lazy"
-            width={150}
-            height={310}
-          />
-        </animated.h1> <animated.h1
-          id="MyElement"
-          className=" flex mt-32 items-center justify-center font-thin text-9xl center-heading text-green-700  font-serif"
-          style={headingProps}
-        >
-          Who
-        </animated.h1>
-        <animated.h1
-          id="MyElement"
-          className=""
-          style={headingPropsX}
-        >
-          <Image
-            src={LogoX}
-            alt="Sahara Desert landscape"
-            loading="lazy"
-            width={250}
-            height={450}
-            className="mt-2"
-          />
-        </animated.h1>
-       
-        
-      </div>
-      {/* card element//////////////////////////////////////////////////////////// */}
-      <div className="flex items-center justify-center">
-        <animated.div style={springProps}>
-          <MDBCard className="m-10">
-            <MDBCardText className=" flex items-center justify-center mt-2">
-              Good afternoon
-            </MDBCardText>
+          {trail.map((animation, index) => (
+            <animated.div
+              key={index}
+              style={animation}
+              className="navbar-line "
+            >
+              {lines[index]}
+            </animated.div>
+          ))}
+        </animated.div>
+        <div className="block inset-0  items-center justify-center">
+          <animated.h1
+            id="MyElement"
+            className="font-thin center-heading text-black text-6xl font-serif"
+            style={headingProps}
+          >
             <Image
-              src={imageTwo}
+              src={Logo}
               alt="Sahara Desert landscape"
               loading="lazy"
+              width={150}
+              height={310}
             />
-            <MDBCardBody>
-              <MDBCardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the Pic content.
-              </MDBCardText>
-            </MDBCardBody>
-          </MDBCard>
-        </animated.div>
-        <animated.div style={springProps}>
-          <MDBCard className="m-10">
-            <MDBCardText className="flex items-center justify-center mt-2">
-              Good Evening
-            </MDBCardText>
+          </animated.h1>{" "}
+          <animated.h1
+            id="MyElement"
+            className=" flex mt-32 animate-pulse   items-center justify-center  text-9xl center-heading text-green-700  font-serif "
+            style={headingProps}
+          >
+            Liquid0x
+          </animated.h1>
+          <animated.h1 id="MyElement" className="" style={headingPropsX}>
             <Image
-              src={imageThree}
+              src={LogoX}
               alt="Sahara Desert landscape"
               loading="lazy"
+              width={250}
+              height={450}
+              className="mt-2"
             />
-            <MDBCardBody>
-              <MDBCardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the Pic content.
-              </MDBCardText>
-            </MDBCardBody>
-          </MDBCard>
-        </animated.div>
-
-        <animated.div style={springProps}>
-          <MDBCard className="m-10">
-            <MDBCardText className="flex items-center justify-center mt-2">
-              Good Night
-            </MDBCardText>
-            <Image
-              src={imageFour}
-              alt="Sahara Desert landscape"
-              loading="lazy"
-            />
-            <MDBCardBody>
-              <MDBCardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the Pic content.
-              </MDBCardText>
-            </MDBCardBody>
-          </MDBCard>
-        </animated.div>
-      </div>
-      {/* //////////////////////////////////////////////////////////// */}
-      <div className=" flex items-center justify-between">
-        <div id="your-div-id" className="your-div-class">
+          </animated.h1>
+        </div>
+        {/* card element//////////////////////////////////////////////////////////// */}
+        <div className="flex items-center justify-center">
           <animated.div style={springProps}>
             <MDBCard className="m-10">
-              <MDBCardText className="flex items-center justify-center mt-2">
-                Good Morning
+              <MDBCardText className=" flex items-center justify-center mt-2">
+                Good afternoon
               </MDBCardText>
-              <Image src={image} alt="Sahara Desert landscape" loading="lazy" />
+              <Image
+                src={imageTwo}
+                alt="Sahara Desert landscape"
+                loading="lazy"
+              />
               <MDBCardBody>
                 <MDBCardText>
                   Some quick example text to build on the card title and make up
@@ -176,8 +122,6 @@ const App = () => {
               </MDBCardBody>
             </MDBCard>
           </animated.div>
-        </div>
-        <div id="your-div-id" className="your-div-class">
           <animated.div style={springProps}>
             <MDBCard className="m-10">
               <MDBCardText className="flex items-center justify-center mt-2">
@@ -196,8 +140,7 @@ const App = () => {
               </MDBCardBody>
             </MDBCard>
           </animated.div>
-        </div>
-        <div id="your-div-id" className="your-div-class">
+
           <animated.div style={springProps}>
             <MDBCard className="m-10">
               <MDBCardText className="flex items-center justify-center mt-2">
@@ -217,6 +160,69 @@ const App = () => {
             </MDBCard>
           </animated.div>
         </div>
+        {/* //////////////////////////////////////////////////////////// */}
+        <div className=" flex items-center justify-between">
+          <div id="your-div-id" className="your-div-class">
+            <animated.div style={springProps}>
+              <MDBCard className="m-10">
+                <MDBCardText className="flex items-center justify-center mt-2">
+                  Good Morning
+                </MDBCardText>
+                <Image
+                  src={image}
+                  alt="Sahara Desert landscape"
+                  loading="lazy"
+                />
+                <MDBCardBody>
+                  <MDBCardText>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the Pic content.
+                  </MDBCardText>
+                </MDBCardBody>
+              </MDBCard>
+            </animated.div>
+          </div>
+          <div id="your-div-id" className="your-div-class">
+            <animated.div style={springProps}>
+              <MDBCard className="m-10">
+                <MDBCardText className="flex items-center justify-center mt-2">
+                  Good Evening
+                </MDBCardText>
+                <Image
+                  src={imageThree}
+                  alt="Sahara Desert landscape"
+                  loading="lazy"
+                />
+                <MDBCardBody>
+                  <MDBCardText>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the Pic content.
+                  </MDBCardText>
+                </MDBCardBody>
+              </MDBCard>
+            </animated.div>
+          </div>
+          <div id="your-div-id" className="your-div-class">
+            <animated.div style={springProps}>
+              <MDBCard className="m-10">
+                <MDBCardText className="flex items-center justify-center mt-2">
+                  Good Night
+                </MDBCardText>
+                <Image
+                  src={imageFour}
+                  alt="Sahara Desert landscape"
+                  loading="lazy"
+                />
+                <MDBCardBody>
+                  <MDBCardText>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the Pic content.
+                  </MDBCardText>
+                </MDBCardBody>
+              </MDBCard>
+            </animated.div>
+          </div>
+        </div>{" "}
       </div>
     </>
   );
