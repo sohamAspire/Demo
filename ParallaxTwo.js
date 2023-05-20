@@ -5,6 +5,8 @@ import image from "/public/morning.png";
 import imageTwo from "/public/afternoon.png";
 import imageThree from "/public/evening.png";
 import imageFour from "/public/night.png";
+import Logo from "/logo.svg";
+import LogoX from "/lodoX.svg";
 import { MDBCard, MDBCardBody, MDBCardText } from "mdb-react-ui-kit";
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,21 +19,26 @@ const App = () => {
       const elementPosition = document.getElementById("MyElement")?.offsetTop;
       const elementHeight = document.getElementById("MyElement").offsetHeight;
       console.log(elementPosition);
-      if (scrollPosition >( elementPosition)) {
+      if (scrollPosition > elementPosition) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
-    };  
+    };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   const headingProps = useSpring({
-    transform: `translateY(${-scrollY * 3}px)`,
+    transform: `translateY(${-scrollY * 2}px)`,
     opacity: scrollY > 0 ? 0 : 1,
     config: { mass: 5, tension: 200, friction: 30 },
+  });
+  const headingPropsX = useSpring({
+    transform: `translateY(${-scrollY * 2}px)`,
+    opacity: scrollY > 0 ? 0 : 1,
+    config: { mass: 5, tension: 2000, friction: 30 },
   });
   const springProps = useSpring({
     opacity: isVisible ? 1 : 0,
@@ -49,7 +56,7 @@ const App = () => {
     <>
       <animated.div
         className="absolute inset-10 flex justify-center  space-x-8"
-        style={headingProps} 
+        style={headingProps}
       >
         {trail.map((animation, index) => (
           <animated.div key={index} style={animation} className="navbar-line ">
@@ -57,16 +64,45 @@ const App = () => {
           </animated.div>
         ))}
       </animated.div>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <animated.h1  id="MyElement"
-          className="font-thin center-heading text-black font-"
+      <div className="block inset-0  items-center justify-center">
+        <animated.h1
+          id="MyElement"
+          className="font-thin center-heading text-black text-6xl font-serif"
           style={headingProps}
         >
-          Liquid0x
+          <Image
+            src={Logo}
+            alt="Sahara Desert landscape"
+            loading="lazy"
+            width={150}
+            height={310}
+          />
+        </animated.h1> <animated.h1
+          id="MyElement"
+          className=" flex mt-32 items-center justify-center font-thin text-9xl center-heading text-green-700  font-serif"
+          style={headingProps}
+        >
+          Who
         </animated.h1>
+        <animated.h1
+          id="MyElement"
+          className=""
+          style={headingPropsX}
+        >
+          <Image
+            src={LogoX}
+            alt="Sahara Desert landscape"
+            loading="lazy"
+            width={250}
+            height={450}
+            className="mt-2"
+          />
+        </animated.h1>
+       
+        
       </div>
       {/* card element//////////////////////////////////////////////////////////// */}
-      <div className="flex items-center justify-center ">
+      <div className="flex items-center justify-center">
         <animated.div style={springProps}>
           <MDBCard className="m-10">
             <MDBCardText className=" flex items-center justify-center mt-2">
